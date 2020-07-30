@@ -5,14 +5,16 @@ from game_functions import handle_events, update_screen
 
 
 def main():
+    clock = pygame.time.Clock()
     setting = Setting()
     pygame.init()
     screen = pygame.display.set_mode((setting.screen_width, setting.screen_height))
-    me = Character(screen)
+    personage = Character(screen, setting)
     pygame.display.set_caption('MORTAL ARENA')
     while True:
-        handle_events(me)
-        update_screen(screen, setting.screen_color, me)
+        clock.tick(60)
+        handle_events(personage)
+        update_screen(screen, setting.screen_color, personage)
 
 
 if __name__ == '__main__':
