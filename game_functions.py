@@ -55,5 +55,5 @@ def _controlling_character_direction(event: pygame.event, character) -> None:
         elif event.key == pygame.K_DOWN:
             character.change_direction(0, 1)
     elif event.type == pygame.KEYUP:
-        if event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT or event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+        if event.key in (pygame.K_RIGHT, pygame.K_LEFT, pygame.K_UP, pygame.K_DOWN):
             character.change_direction(0, 0)
